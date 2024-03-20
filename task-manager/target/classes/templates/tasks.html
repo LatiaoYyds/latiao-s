@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+<h1>Task List</h1>
+<a href="/addTask">Add New Task</a>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="task : ${tasks}">
+        <td th:text="${task.title}">Title</td>
+        <td th:text="${task.description}">Description</td>
+        <td th:text="${task.completed ? 'Completed' : 'Not Completed'}">Status</td>
+    </tr>
+</table>
+</body>
+</html>
